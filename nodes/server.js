@@ -7,7 +7,7 @@ const server = http.createServer(function (req, res) {
 let path = `./views/`;
 switch(req.url) {
     case '/': path += 'index.html'; break;
-    case '/aboutus': path += 'aboutus.html'; break;
+    case '/aboutus': path += 'About.html'; break;
     default: path += '404.html'; break;
 }
 fs.readFile(`${path}`,(function (err, data) {
@@ -19,4 +19,8 @@ fs.readFile(`${path}`,(function (err, data) {
     }
 }))
 })
+
+const port = 5500;
+server.listen(port);
+console.log(`listening on port: ${port}`)
 
